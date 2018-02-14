@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish:javax.servlet.jsp.jstl:3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.servlet.jsp.jstl/3.0/d722f5a7ddcfa90365fd142a91928a23a5f38ad2/javax.servlet.jsp.jstl-3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.servlet.jsp.jstl/3.0/7f88fbff6b7480ff0f3b414c4c3a9a0b7a8c819a/javax.servlet.jsp.jstl-3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
