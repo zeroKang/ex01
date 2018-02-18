@@ -1,6 +1,7 @@
 package org.zerock.controller;
 
 import lombok.extern.log4j.Log4j;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,10 +11,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.servlet.ModelAndView;
 
 @RunWith(SpringRunner.class)
 @WebAppConfiguration
@@ -90,4 +93,57 @@ public class SampleControllerTests {
 
     }
 
+    @Test
+    public void testModelEx1()throws Exception{
+
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/sample/modelEx1")).andReturn();
+
+        ModelAndView mav = result.getModelAndView();
+
+        Assert.assertNotNull(mav.getModelMap().get("product"));
+
+        log.info(mav);
+    }
+
+    @Test
+    public void testWithoutModel()throws Exception{
+
+        MvcResult result = mockMvc.perform(
+                MockMvcRequestBuilders.get("/sample/withoutModel")
+                        .param("id","USERID")
+                        .param("pw","PASSWORD")).andReturn();
+
+        ModelAndView mav = result.getModelAndView();
+
+        Assert.assertNotNull(mav.getModelMap());
+
+        log.info(mav);
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
