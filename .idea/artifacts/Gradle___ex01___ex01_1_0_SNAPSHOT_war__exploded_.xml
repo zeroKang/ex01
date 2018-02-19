@@ -23,7 +23,6 @@
           <element id="library" level="project" name="Gradle: org.projectlombok:lombok:1.16.20" />
           <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:4.0.0" />
           <element id="library" level="project" name="Gradle: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" />
-          <element id="library" level="project" name="Gradle: org.glassfish:javax.servlet.jsp.jstl:3.0" />
           <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-aop:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-web:5.0.3.RELEASE" />
@@ -31,6 +30,7 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.0.3.RELEASE" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jstl/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar" />
         </element>
       </element>
     </root>

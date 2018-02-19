@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.LocationDTO;
 import org.zerock.domain.LoginDTO;
 import org.zerock.domain.ProductVO;
@@ -22,6 +23,11 @@ public class SampleController {
     @GetMapping("/doA")
     public void doA(){
         log.info("/sample/doA.............called");
+    }
+
+    @GetMapping("/login")
+    public void loginGET(){
+        log.info("GET /sample/login.....");
     }
 
     @PostMapping("/login")
@@ -72,6 +78,79 @@ public class SampleController {
 
         log.info("-----------------------");
 
+    }
+
+    @GetMapping("/checkUser")
+    public String checkUser(String id){
+
+        if(id == null){
+            return "/sample/login";
+        }
+        return "/sample/home";
+    }
+
+    @GetMapping("/move")
+    public String movePage(){
+
+        return "redirect:/sample/login";
+
+    }
+
+    @GetMapping("/moveForward1")
+    public String moveForward1( @ModelAttribute("login") LoginDTO loginDTO ){
+
+        log.info("===========================");
+        log.info("move forward");
+
+        return "forward:/sample/moveResult1";
+
+    }
+
+    @GetMapping("/moveResult1")
+    public void moveResult1( Model model ){
+
+        log.info("===========================");
+        log.info("move result 1");
+        log.info(model);
+    }
+
+    @GetMapping("/move2")
+    public String move2( String id, RedirectAttributes rttr ){
+
+        log.info("===========================");
+        log.info("move2  redirect");
+        rttr.addAttribute("id", id);
+
+        return "redirect:/sample/moveResult2";
+
+    }
+
+    @GetMapping("/moveResult2")
+    public void moveResult2(String id ){
+
+        log.info("===========================");
+        log.info("move result 2");
+        log.info(id);
+    }
+
+    @GetMapping("/moveFlash")
+    public String moveFlash(RedirectAttributes rttr ){
+
+        log.info("===========================");
+        log.info("move flash  redirect");
+
+        rttr.addFlashAttribute("result","SUCCESS");
+
+        return "redirect:/sample/moveFlashResult";
+
+    }
+
+    @GetMapping("/moveFlashResult")
+    public void moveResult3( String result ){
+
+        log.info("===========================");
+        log.info("move result 3");
+        log.info(result);
     }
 
 }
