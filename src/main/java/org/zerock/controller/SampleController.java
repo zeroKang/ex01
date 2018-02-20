@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.LocationDTO;
 import org.zerock.domain.LoginDTO;
@@ -154,6 +155,17 @@ public class SampleController {
         log.info("move result 3");
         log.info(result);
     }
+
+    @PostMapping("/uploadEx")
+    public void uploadEx(MultipartFile[] files){
+
+        Arrays.stream(files).forEach(file -> {
+            log.info(file.getOriginalFilename());
+            log.info(file.getSize());
+        });
+
+    }
+
 
     @GetMapping(value ="/getJSON", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
