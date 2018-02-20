@@ -21,16 +21,19 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-context:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-test:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.projectlombok:lombok:1.16.20" />
-          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:4.0.0" />
           <element id="library" level="project" name="Gradle: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" />
+          <element id="library" level="project" name="Gradle: jstl:jstl:1.2" />
           <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.4" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-aop:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-web:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-beans:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.4" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.0.3.RELEASE" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.servlet.jsp.jstl/3.0/d722f5a7ddcfa90365fd142a91928a23a5f38ad2/javax.servlet.jsp.jstl-3.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" />
         </element>
       </element>
     </root>

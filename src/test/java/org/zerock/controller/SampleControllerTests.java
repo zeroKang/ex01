@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 @RunWith(SpringRunner.class)
 @WebAppConfiguration
@@ -120,6 +121,14 @@ public class SampleControllerTests {
         log.info(mav);
     }
 
+    @Test
+    public void testJSON()throws Exception{
+
+        MvcResult result = mockMvc.perform(
+                MockMvcRequestBuilders.get("/sample/getJSON")).andReturn();
+
+        log.info(result.getResponse().getContentAsString());
+    }
 
 }
 

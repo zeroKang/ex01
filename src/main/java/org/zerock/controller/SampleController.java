@@ -3,6 +3,7 @@ package org.zerock.controller;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.zerock.domain.LocationDTO;
 import org.zerock.domain.LoginDTO;
 import org.zerock.domain.ProductVO;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -152,6 +154,18 @@ public class SampleController {
         log.info("move result 3");
         log.info(result);
     }
+
+    @GetMapping(value ="/getJSON", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseBody
+    public LoginDTO jsonTest( ){
+
+        LoginDTO dto = new LoginDTO();
+        dto.setId("user00");
+        dto.setPw("pass00");
+
+        return dto;
+    }
+
 
 }
 
