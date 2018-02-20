@@ -30,7 +30,7 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.0.3.RELEASE" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jstl/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.servlet.jsp.jstl/3.0/d722f5a7ddcfa90365fd142a91928a23a5f38ad2/javax.servlet.jsp.jstl-3.0.jar" />
         </element>
       </element>
     </root>
