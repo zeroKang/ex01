@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan("org.zerock.controller")
+@ComponentScan({"org.zerock.controller","org.zerock.exception"})
 public class ServletConfig extends WebMvcConfigurationSupport{
 
     @Override

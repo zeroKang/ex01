@@ -7,17 +7,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+import org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.fileUpload;
 
 @RunWith(SpringRunner.class)
 @WebAppConfiguration
@@ -113,6 +117,24 @@ public class SampleControllerTests {
                 MockMvcRequestBuilders.get("/sample/withoutModel")
                         .param("id","USERID")
                         .param("pw","PASSWORD")).andReturn();
+
+        ModelAndView mav = result.getModelAndView();
+
+        Assert.assertNotNull(mav.getModelMap());
+
+        log.info(mav);
+    }
+
+    @Test
+    public void testUploadEx()throws Exception {
+
+        MockMultipartFile firstFile = new MockMultipartFile(
+                "files", "sampleText.txt", "text/plain", "Hello World!!!".getBytes());
+        MockMultipartFile secondFile = new MockMultipartFile(
+                "files", "otherFile.data", "text/plain", "Other File Test".getBytes());
+
+        MvcResult result = mockMvc.perform( MockMvcRequestBuilders.multipart("/sample/uploadEx")
+                .file(firstFile).file(secondFile)).andReturn();
 
         ModelAndView mav = result.getModelAndView();
 
